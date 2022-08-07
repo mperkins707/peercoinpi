@@ -1,0 +1,8 @@
+version: '3.6'
+services:
+  peercoinpi-web:
+    image: nginx:latest
+    volumes:
+    - ./frontend/dist:/usr/share/nginx/html
+    ports:
+      - 8080:80
