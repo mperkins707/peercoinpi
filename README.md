@@ -58,4 +58,5 @@ Everything is runs on the device. Only UI is served to the user with a web serve
 - [ ] Automatic clam of 1,000 TEST PPC to try out
 - [ ] Automatic node discovery when first use. Peercoin PI Discovery Node on local.
 - [ ] Setup a website for it
+- [ ] Update of latest software with only a click ( Automatic ? ).
 - [ ] Adding community based project inside the Dashboard ( Immutable Place, Christmas messages )
