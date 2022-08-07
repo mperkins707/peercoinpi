@@ -38,5 +38,24 @@ _Remember that a decentralized system should always be out of centralized group 
 
 ##### Advanced Technical Details
 
-Peercoin PI can be run on Raspberry PI device. It serve a web server which communicate with the `peercoind` RPC command-line.
-Local is using Docker-compose to run and build frontend. Everything is done on the device. Only UI is served to the user with a web server.
+Peercoin PI can be run on Raspberry PI device. 
+
+It serve a web server which communicate with the `peercoind` RPC command-line.
+Local is using Docker-compose to run and build frontend. 
+
+Everything is runs on the device. Only UI is served to the user with a web server.
+
+#### Version 1.0.0
+
+- Switch between testnet and mainnet for users to be able to test Peercoin PI with test coins beforehand.
+- Web UI connected to the Peercoind RPC command-line.
+- View of balances and mints
+- Settings with network information
+- Warning of use (non-production version: own risks)
+
+##### Roadmap
+
+- [ ] Automatic clam of 1,000 TEST PPC to try out
+- [ ] Automatic node discovery when first use. Peercoin PI Discovery Node on local.
+- [ ] Setup a website for it
+- [ ] Adding community based project inside the Dashboard ( Immutable Place, Christmas messages )
