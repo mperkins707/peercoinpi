@@ -33,3 +33,10 @@ By running a node you're accepting the principles that:
 - You'll be part of the world best intent to decentralize power
 
 _Remember that a decentralized system should always be out of centralized group that can corrupt the network._
+
+----
+
+##### Advanced Technical Details
+
+Peercoin PI can be run on Raspberry PI device. It serve a web server which communicate with the `peercoind` RPC command-line.
+Local is using Docker-compose to run and build frontend. Everything is done on the device. Only UI is served to the user with a web server.
