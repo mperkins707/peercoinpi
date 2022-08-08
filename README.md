@@ -45,6 +45,10 @@ Local is using Docker-compose to run and build frontend.
 
 Everything is runs on the device. Only UI is served to the user with a web server.
 
+##### Difference between base and production Docker-Compose
+
+You will note there a difference between docker-compose files. In fact one should be used for development and as it names implies to production for the other one. This ensure that development environment can replicate the production (peercoind on the device itself) correctly.
+
 #### Version 1.0.0
 
 - Switch between testnet and mainnet for users to be able to test Peercoin PI with test coins beforehand.
