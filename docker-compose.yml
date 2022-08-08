@@ -6,3 +6,24 @@ services:
     - ./frontend/dist:/usr/share/nginx/html
     ports:
       - 8080:80
+    networks:
+    - peercoinpi
+  peercoinpi-deamon:
+    image: peercoin/peercoind:0.11.7
+    volumes:
+    - ./api:/peercoinpi
+    networks:
+    - peercoinpi
+  peercoin-api:
+    image: node:18.7.0
+    networks:
+      - peercoinpi
+    volumes:
+    - ./api/peercoinpi:/api
+    ports:
+      - "3000:3000"
+    command: bash -c "cd /api && npm run start"
+
+networks:
+  peercoinpi:
+    driver: bridge

@@ -1,22 +1,30 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <h1>Balances</h1>
-    {{ this.balances }}
-    <h1>listMinting</h1>
-    {{ this.mintings }}
-    <h1>networkinfo</h1>
-    {{ this.networkinfo }}
+    <h1>Dashboard</h1>
+    {{ this.dashboard }}
+
+    <input type="checkbox" v-model="testmode">
+    <h1 v-if="this.testmode">
+      Test Mode Enabled
+    </h1>
+    <h1 v-else>
+      Main Mode
+    </h1>
   </div>
 </template>
 
 <script>
-import PeercoinRPC from '@/services/PeercoinRPC.js';
+import PeercoinPI from '@/services/PeercoinPI.js';
 
 export default {
   name: 'Home',
   data() {
     return {
+      dashboard: {
+        type: Array,
+        default: null
+      },
       balances: {
         type: Array
       },
@@ -25,14 +33,16 @@ export default {
       },
       networkinfo: {
         type: Array
+      },
+      testmode: {
+        type: Boolean
       }
     }
   },
-  beforeMount() {
-      let peercoinRpc = new PeercoinRPC();
-      this.balances = peercoinRpc.getBalances();
-      this.mintings = peercoinRpc.getListMintings();
-      this.networkinfo = peercoinRpc.getNetworkInfo();
+  mounted() {
+      let api = new PeercoinPI();
+      var self = this;
+      api.getDashboard().then(response => self.dashboard = response.data)
   }
 }
 </script>
