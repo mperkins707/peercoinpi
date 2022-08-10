@@ -1,20 +1,16 @@
 #!/bin/bash
-echo 'Starting Peercoin Testnet';
+echo 'Starting Peercoin Mainet';
 
-cd /peercoinpi/config/testnet
+cd /peercoinpi/config/main
 bash refresh.sh &
 
 cd /opt/peercoin/bin
 peercoind \
--testnet=1 \
 -rpcpassword=1234 \
 -rpcuser=peercoinpi \
--rpcport=9904 \
+-rpcport=9902 \
 -rpcallowip=0.0.0.0/0 \
--conf=./peercoinpi/config/peercoin_testnet.conf \
+-conf=./peercoinpi/config/peercoin.conf \
 -server=1 \
 -rest \
 -listen=1
-
-
-

@@ -1,0 +1,17 @@
+
+@import '../scss/general/general.reset';
+@import '../scss/general/general.colors';
+
+@import '../scss/fonts/paragraph';
+@import '../scss/fonts/fonts';
+
+@import '../scss/pages/home.scss';
+
+
+html, 
+body {
+    overflow: hidden;
+    background-color: $primary-color;
+    height: 100%;
+    cursor: pointer;
+}

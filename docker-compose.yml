@@ -12,9 +12,24 @@ services:
     image: peercoin/peercoind:0.11.7
     volumes:
     - ./api:/peercoinpi
+    - ./api/config/peercoin.conf:/root/.peercoin/peercoin.conf
+    - ./blockchain/testnet:/root/.peercoin/testnet3
     networks:
     - peercoinpi
     command: bash -c "cd /peercoinpi && ./start_testnet.sh"
+    ports:
+      - 9904:9904
+  peercoinpi-deamon-mainnet:
+    image: peercoin/peercoind:0.11.7
+    volumes:
+    - ./api:/peercoinpi
+    - ./api/config/peercoin.conf:/root/.peercoin/peercoin.conf
+    - ./blockchain/main:/root/.peercoin
+    networks:
+    - peercoinpi
+    command: bash -c "cd /peercoinpi && ./start_main.sh"
+    ports:
+      - 9902:9902
   peercoin-api:
     image: node:18.7.0
     networks:
