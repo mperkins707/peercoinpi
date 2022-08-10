@@ -1,7 +1,6 @@
 NOTES.md
 HACKADAY.md
 WIKI.md
-frontend/dist
 frontend/node_modules
 api/peercoinpi/node_modules
 blockchain/main
