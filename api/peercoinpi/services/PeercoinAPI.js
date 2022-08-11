@@ -3,7 +3,7 @@ const fs = require('fs');
 
 class PeercoinAPI {
 
-    chain = 'main';
+    chain = 'testnet';
 
     constructor() {
         console.log('Peercoin RPC initialization..');
