@@ -1,3 +1,8 @@
+.c-home:has(.container) {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
 .c-home {
     display: flex;
     flex-direction: column;
@@ -27,9 +32,7 @@
 }
 
 .c-peercoinpi {
-    h1 {
-        color: $secondary-color;
-    }
+    height: 100vh !important;
 }
 
 .c-peercoin-leaf {

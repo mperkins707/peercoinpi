@@ -1,0 +1,21 @@
+.c-header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    &__menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__notification {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            height: 32px;
+        }
+    }
+}

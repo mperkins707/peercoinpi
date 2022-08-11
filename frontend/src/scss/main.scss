@@ -1,15 +1,42 @@
-
+// General
 @import '../scss/general/general.reset';
 @import '../scss/general/general.colors';
 
-@import '../scss/fonts/paragraph';
+// Utility
+@import '../scss/utility/utility';
+
+// Fonts
+@import '../scss/fonts/headings';
 @import '../scss/fonts/fonts';
 
+// Pages
 @import '../scss/pages/home.scss';
 
+// Components
+@import '../scss/components/Header.scss';
 
 html, 
 body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+html, #app{
+    height: 100%;
+}
+
+body{
+    min-height: 100%;
+    cursor: default;
+}
+
+.container {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.c-home {
     overflow: hidden;
     background-color: $primary-color;
     height: 100%;

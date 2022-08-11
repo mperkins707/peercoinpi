@@ -1,34 +1,34 @@
 {
   "chain": "main",
-  "blocks": 60022,
-  "headers": 636661,
-  "bestblockhash": "06b97ab9f30124496fb384ea590055705484bae8f9eb54b06763b1d2dada346f",
-  "difficulty": 4.084872641124688,
-  "mediantime": 1374616572,
-  "verificationprogress": 0.125076738693725,
-  "initialblockdownload": true,
-  "chainwork": "0000000000000000000000000000000000000000000000000003931dd1ba785a",
-  "size_on_disk": 104660598,
+  "blocks": 636821,
+  "headers": 636821,
+  "bestblockhash": "88ee8b543cc57a5b7317344133abeff1c8641fec03dfbaec073e243e80d58b2f",
+  "difficulty": 14.01230433090398,
+  "mediantime": 1660187218,
+  "verificationprogress": 0.9999993463938045,
+  "initialblockdownload": false,
+  "chainwork": "000000000000000000000000000000000000000000000000004e4d6348349fe3",
+  "size_on_disk": 844077768,
   "softforks": [
     {
       "id": "bip34",
       "version": 2,
       "reject": {
-        "status": false
+        "status": true
       }
     },
     {
       "id": "bip66",
       "version": 3,
       "reject": {
-        "status": false
+        "status": true
       }
     },
     {
       "id": "bip65",
       "version": 4,
       "reject": {
-        "status": false
+        "status": true
       }
     }
   ],
