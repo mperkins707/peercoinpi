@@ -1,8 +1,9 @@
 .c-header {
     display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+    background-color: $warning-color;
+    height: 5%;
 
     &__menu {
         display: flex;
@@ -20,7 +21,7 @@
     }
 
     &__testmode {
-        margin-top: 10px;
+        color: $secondary-color;
         text-align: center;
     }
 }

@@ -35,6 +35,10 @@ class PeercoinPI {
         return axios.get(this.buildHost() + '/' + url);
     }
 
+    getTransactions() {
+        return this.get('transactions');
+    }
+
     getDashboard() {
         return this.get('dashboard');
     }

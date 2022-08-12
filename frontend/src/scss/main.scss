@@ -11,9 +11,12 @@
 
 // Pages
 @import '../scss/pages/home.scss';
+@import '../scss/pages/dashboard.scss';
 
 // Components
+@import '../scss/components/Transactions.scss';
 @import '../scss/components/Header.scss';
+@import '../scss/components/Sidebar.scss';
 
 html, 
 body {

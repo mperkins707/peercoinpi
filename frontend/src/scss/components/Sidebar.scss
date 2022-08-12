@@ -1,0 +1,71 @@
+.c-sidebar {
+    width: 20%;
+    background-color: $third-color;
+    color: $secondary-color;
+
+    &__logo {
+        a {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &__items {
+
+        &--icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+
+            li {
+
+                svg {
+                    width: 28px;
+                    fill: white;
+                }
+
+                height: 70px;
+                transition: all 250ms ease-in-out;
+
+                &:hover {
+                    cursor: pointer;
+                    transition: all 750ms ease-in-out;
+                    background-color: $primary-color-rgba;
+                }
+
+                display: flex;
+                gap: 30px;
+                flex-direction: row;
+                justify-content: left;
+                padding-left: 35px;
+
+                span {
+                    font-family: $primary-font;
+                    font-size: 21px;
+                    font-weight: 400;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+    
+    &__version {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: $primary-font;
+        font-weight: 400;
+        margin-top: 280px;
+    }
+
+    img {
+        width: 75%;
+    }
+}

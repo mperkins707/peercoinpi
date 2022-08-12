@@ -3,7 +3,6 @@ var router = express.Router();
 
 var PeercoinAPI = require('../services/PeercoinAPI');
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
 
     let api = new PeercoinAPI();
@@ -15,7 +14,8 @@ router.get('/', function(req, res, next) {
       'meta': api.getBlockchaininfo(),
       'progress': progress,
       "finished": progress === 100 ? true : false,
-      'mb': Math.ceil(meta.size_on_disk / 1024 / 1024)
+      'mb': Math.ceil(meta.size_on_disk / 1024 / 1024),
+      'transactions': api.getTransactions().reverse()
     }, 200);
 });
 

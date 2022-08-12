@@ -1,20 +1,32 @@
 <template>
   <div class="c-dashboard">
-    <div class="container">
-      <Header></Header>
-      <h1>Overview</h1>
-      <h2 class="u-color-black">{{ this.dashboard.balances.mine.trusted }}</h2>
+    <Sidebar></Sidebar>
+    <div class="c-dashboard-view">
+        <Header></Header>
+
+        <div class="c-dashboard-view-header">
+          <div class="container">
+            <h1>Overview</h1>
+          </div>
+        </div>
+        <div class="c-dashboard-view-transactions">
+          <div class="container">
+            <Transactions :transactions="this.dashboard.transactions"></Transactions>
+          </div>
+        </div>
     </div>
   </div>
 </template>
 
 <script>
 import Header from '../components/Header.vue';
+import Sidebar from '../components/Sidebar.vue';
+import Transactions from '../components/Transactions/Transactions.vue';
 import PeercoinPI from '@/services/PeercoinPI.js';
 
 export default {
   name: "Dashboard",
-  components: { Header },
+  components: { Sidebar, Header, Transactions },
   data() {
     return {
       dashboard: {

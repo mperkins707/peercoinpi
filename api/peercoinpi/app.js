@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cors = require('cors')
 
 var dashboardRouter = require('./routes/dashboard');
+var transactionsRouter = require('./routes/transactions');
 
 var app = express();
 
@@ -17,5 +18,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/dashboard', dashboardRouter);
+app.use('/transactions', transactionsRouter);
 
 module.exports = app;

@@ -1,7 +1,7 @@
 {
   "mine": {
     "trusted": 130.000000,
-    "untrusted_pending": 0.000000,
+    "untrusted_pending": 20.000000,
     "immature": 0.000000
   }
 }

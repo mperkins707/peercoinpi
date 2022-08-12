@@ -1,0 +1,25 @@
+.c-dashboard {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+
+    &-view {
+        width: 100%;
+        background-color: $secondary-color;
+
+        &-header {
+            display: flex;
+            align-items: center;
+            background-color: $background-color;
+            height: 100px;
+        }
+
+        &-transactions {
+            margin-top: 20px;
+
+            h3 {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

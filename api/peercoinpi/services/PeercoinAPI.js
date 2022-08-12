@@ -27,6 +27,11 @@ class PeercoinAPI {
         return JSON.parse(rawdata);
     }
 
+    getTransactions() {
+        let rawdata = fs.readFileSync('./deamon/' + this.chain + '/listtransactions.json');
+        return JSON.parse(rawdata);
+    }
+
 }
 
 module.exports = PeercoinAPI;
