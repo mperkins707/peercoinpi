@@ -32,6 +32,11 @@ class PeercoinAPI {
         return JSON.parse(rawdata);
     }
 
+    getListMinting() {
+        let rawdata = fs.readFileSync('./deamon/' + this.chain + '/listminting.json');
+        return JSON.parse(rawdata);
+    }
+
 }
 
 module.exports = PeercoinAPI;

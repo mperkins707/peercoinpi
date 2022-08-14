@@ -12,7 +12,7 @@
             +{{ this.amount}}
         </div>
         <div class="c-transactions-item__amount c-transactions-item__amount--send" v-if="this.category === 'send'">
-            -{{ this.amount}}
+            {{ this.amount}}
         </div>
         {{ this.confirmations }}
     </div>

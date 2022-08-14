@@ -1,8 +1,6 @@
 <template>
-    <div class="c-header">
-        <h5 class="u-color-black c-header__testmode">
-            TESTNET MODE
-        </h5>
+    <div class="c-header u-color-white">
+        TESTNET MODE
     </div>
 </template>
 

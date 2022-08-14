@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     background-color: $warning-color;
-    height: 5%;
+    height: 30px;
 
     &__menu {
         display: flex;
@@ -23,5 +23,6 @@
     &__testmode {
         color: $secondary-color;
         text-align: center;
+        font-size: 14px;
     }
 }

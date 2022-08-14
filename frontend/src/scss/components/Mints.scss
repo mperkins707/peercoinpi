@@ -1,0 +1,29 @@
+.c-mints {
+    margin-top: 30px;
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        padding: 25px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        background-color: $secondary-color;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+
+        font-size: $primary-font;
+        font-weight: 300;
+        font-size: 16px;
+
+        &--immature {
+            border-left: 3px solid $warning-color;
+        }
+
+        &--mature {
+            border-left: 3px solid $primary-color;
+        }
+    }
+
+    &__hashrate {
+        margin-top: 30px;
+    }
+}

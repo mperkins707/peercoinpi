@@ -17,12 +17,12 @@
 @import '../scss/components/Transactions.scss';
 @import '../scss/components/Header.scss';
 @import '../scss/components/Sidebar.scss';
+@import '../scss/components/Mints.scss';
 
 html, 
 body {
     padding: 0;
     margin: 0;
-    overflow: hidden;
 }
 
 html, #app{
