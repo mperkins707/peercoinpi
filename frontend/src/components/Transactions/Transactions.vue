@@ -1,6 +1,6 @@
 <template>
     <div class="c-transactions">
-        <h3 class="u-color-black">My transactions</h3>
+        <h4 class="u-color-black">My transactions</h4>
         <div class="c-transactions__container">
             <div v-for="(transaction, index) in this.transactions" v-bind:key="index">
                 <TransactionsItemVue 

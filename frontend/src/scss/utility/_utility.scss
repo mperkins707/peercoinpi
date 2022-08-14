@@ -5,3 +5,19 @@
 .u-color-white {
     color: white;
 }
+
+.fatter {
+    font-weight: 400 !important;
+}
+
+.rotateArrowUp {
+    transform: rotate(90deg);
+}
+
+.rotateArrowDown {
+    transform: rotate(-90deg);
+}
+
+.moveMenu {
+    margin-left: 1px;
+}

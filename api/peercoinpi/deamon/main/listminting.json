@@ -7,11 +7,11 @@
     "status": "immature",
     "age-in-day": "9",
     "coin-day-weight": "0",
-    "proof-of-stake-difficulty": 15.386793941017,
+    "proof-of-stake-difficulty": 15.51761262944478,
     "minting-probability-10min": 0,
     "minting-probability-24h": 0,
-    "minting-probability-30d": 0.004744998002432554,
-    "minting-probability-90d": 0.2632206827751498,
+    "minting-probability-30d": 0.004705090337163154,
+    "minting-probability-90d": 0.2613208921450719,
     "search-interval-in-sec": 0,
     "attempts": 0
   }

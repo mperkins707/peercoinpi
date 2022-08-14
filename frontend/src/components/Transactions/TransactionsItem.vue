@@ -1,5 +1,5 @@
 <template>
-    <div class="c-transactions-item"
+    <div class="c-transactions__item"
     :class="{ 'c-transactions-item--disabled': this.confirmations < 8 }"
     >
         <div class="c-transactions-item__date">
@@ -8,11 +8,11 @@
         <div class="c-transactions-item__address">
             ({{ this.address }})
         </div>
-        <div class="c-transactions-item__amount c-transactions-item__amount--receive" v-if="this.category === 'receive'">
-            +{{ this.amount}}
+        <div class="c-transactions-item__amount c-transactions-item__amount--received" v-if="this.category === 'receive'">
+            +{{ this.amount }}
         </div>
         <div class="c-transactions-item__amount c-transactions-item__amount--send" v-if="this.category === 'send'">
-            {{ this.amount}}
+            {{ this.amount }}
         </div>
         {{ this.confirmations }}
     </div>

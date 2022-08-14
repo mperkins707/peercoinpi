@@ -2,34 +2,24 @@
     &__container {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
     }
 
-    &-item {
+    @import '../components/generics/Card.scss';
+
+    &__item {
 
         &--disabled {
             opacity: 0.30;
         }
 
-        padding-top: 10px;
-        padding-bottom: 10px;
-        width: 1000px;
-        display: flex;
-        gap: 20px;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-
-        font-size: 25px;
-        font-weight: 200;
-        font-family: $primary-font;
-
         &__amount {
-            color: $primary-color;
 
             &--send {
                 color: $warning-color;
+            }
+
+            &--received {
+                color: $primary-color;
             }
         }
     }

@@ -1,0 +1,13 @@
+&__item {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: $secondary-color;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    font-size: $primary-font;
+    font-weight: 300;
+    font-size: 16px;
+    border-radius: 0px 5px 5px 0px;
+}

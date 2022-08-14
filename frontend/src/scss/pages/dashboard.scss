@@ -4,12 +4,12 @@
 
     &-view {
         width: 100%;
-        background-color: $secondary-color;
+        background-color: $background-color;
 
         &-header {
             display: flex;
             align-items: center;
-            background-color: $background-color;
+            background-color: $secondary-color;
             height: 100px;
         }
 

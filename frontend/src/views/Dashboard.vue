@@ -3,7 +3,6 @@
     <Sidebar></Sidebar>
     <div class="c-dashboard-view">
         <Header></Header>
-
         <div class="c-dashboard-view-header">
           <div class="container">
             <h1>Overview</h1>
@@ -11,7 +10,11 @@
         </div>
         <div class="c-dashboard-view-transactions">
           <div class="container">
-            <Transactions :transactions="this.dashboard.transactions"></Transactions>
+            <div class="row">
+              <div class="col-6">
+                <Transactions :transactions="this.dashboard.transactions"></Transactions>
+              </div>
+            </div>
           </div>
         </div>
     </div>

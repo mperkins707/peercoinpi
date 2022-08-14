@@ -11,18 +11,21 @@
         <div class="c-mints">
           <div class="container">
             <div class="row">
-              <div class="col-4">
-                <h1>Immature ({{ this.dashboard.mints.immature.length }})</h1>
+              <div class="col-3">
+                <h4 class="u-color-black">Immature ({{ this.dashboard.mints.immature.length }})</h4>
                 <Mints :mints="this.dashboard.mints.immature"></Mints>
               </div>
-              <div class="col-4">
-                <h1>Mature ({{ this.dashboard.mints.mature.length }})</h1>
+              <div class="col-3">
+                <h4 class="u-color-black">Mature ({{ this.dashboard.mints.mature.length }})</h4>
                 <Mints :mints="this.dashboard.mints.mature"></Mints>
               </div>
-              <div class="col-4">
-                <h1>Hashrate</h1>
+              <div class="col-3">
+                <h4 class="u-color-black">Minted (0)</h4>
+              </div>
+              <div class="col-3">
+                <h4 class="u-color-black">Hashrate</h4>
                 <div class="c-mints__hashrate">
-                  <h2 class="u-color-black">{{ this.dashboard.mints.hashrate }} hashes per seconds</h2>
+                  <h3 class="u-color-black">{{ this.dashboard.mints.hashrate }} attempts</h3>
                 </div>
               </div>
             </div>
