@@ -1,14 +1,14 @@
 {
   "chain": "main",
-  "blocks": 637462,
-  "headers": 637462,
-  "bestblockhash": "00000000000000006c944e08dd7105cff9d4e0321b7083a529d18c92b45202cc",
-  "difficulty": 3273980851.246452,
-  "mediantime": 1660495633,
-  "verificationprogress": 0.9999997465470963,
+  "blocks": 637466,
+  "headers": 637466,
+  "bestblockhash": "3cd3bcd9149863b9c9e17748296dc7d25ea374755153d3a6b644f8b8e37c052a",
+  "difficulty": 15.53262581345806,
+  "mediantime": 1660497481,
+  "verificationprogress": 0.9999981543756087,
   "initialblockdownload": false,
-  "chainwork": "000000000000000000000000000000000000000000000000004e6d3063c19cf4",
-  "size_on_disk": 844571635,
+  "chainwork": "000000000000000000000000000000000000000000000000004e6d5f01066211",
+  "size_on_disk": 844580712,
   "softforks": [
     {
       "id": "bip34",

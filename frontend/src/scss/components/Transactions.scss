@@ -4,15 +4,44 @@
         flex-direction: column;
     }
 
-    @import '../components/generics/Card.scss';
+    div {
+        width: -webkit-fill-available;
+    }
 
     &__item {
+
+        display: flex;
+        justify-content: space-between;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: $primary-font;
+        border-bottom: 2px solid $border-color;
+        font-weight: 300;
+        font-size: 16px;
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(0,0,0,0.025);
+        }
 
         &--disabled {
             opacity: 0.30;
         }
 
+        &__icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         &__amount {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            font-size: 21px;
+            font-weight: 500;
 
             &--send {
                 color: $warning-color;

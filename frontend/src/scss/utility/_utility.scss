@@ -10,6 +10,14 @@
     font-weight: 400 !important;
 }
 
+.rotateLeft {
+    transform: rotate(0deg);
+}
+
+.rotateRight {
+    transform: rotate(180deg);
+}
+
 .rotateArrowUp {
     transform: rotate(90deg);
 }

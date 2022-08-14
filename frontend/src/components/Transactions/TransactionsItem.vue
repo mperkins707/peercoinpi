@@ -1,20 +1,24 @@
 <template>
     <div class="c-transactions__item"
-    :class="{ 'c-transactions-item--disabled': this.confirmations < 8 }"
+    :class="{ 'c-transactions__item--disabled': this.confirmations < 8 }"
     >
-        <div class="c-transactions-item__date">
+        <div class="c-transactions__item__date">
             {{ this.timereceived }}
         </div>
-        <div class="c-transactions-item__address">
-            ({{ this.address }})
+        <div class="c-transactions__item__icon">
+            <div class="c-sidebar__items--icon rotateLeft" v-if="this.category === 'receive'">
+              <img height=32px src="../../assets/ui/ui-received.svg" alt="Received">
+            </div>
+            <div class="c-sidebar__items--icon rotateRight" v-if="this.category === 'send'">
+              <img height=32px src="../../assets/ui/ui-received.svg" alt="Send">
+            </div>
         </div>
-        <div class="c-transactions-item__amount c-transactions-item__amount--received" v-if="this.category === 'receive'">
+        <div class="c-transactions__item__amount c-transactions__item__amount--received" v-if="this.category === 'receive'">
             +{{ this.amount }}
         </div>
-        <div class="c-transactions-item__amount c-transactions-item__amount--send" v-if="this.category === 'send'">
+        <div class="c-transactions__item__amount c-transactions__item__amount--send" v-if="this.category === 'send'">
             {{ this.amount }}
         </div>
-        {{ this.confirmations }}
     </div>
 </template>
 

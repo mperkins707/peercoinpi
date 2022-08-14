@@ -11,8 +11,12 @@
         <div class="c-dashboard-view-transactions">
           <div class="container">
             <div class="row">
-              <div class="col-6">
+              <div class="col-3">
                 <Transactions :transactions="this.dashboard.transactions"></Transactions>
+              </div>
+              <div class="col-9">
+                <h4 class="u-color-black">Details</h4>
+                details of the transactions will show here
               </div>
             </div>
           </div>
