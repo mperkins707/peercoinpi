@@ -11,12 +11,15 @@
         <div class="c-dashboard-view-transactions">
           <div class="container">
             <div class="row">
-              <div class="col-3">
+              <div class="col-4">
                 <Transactions :transactions="this.dashboard.transactions"></Transactions>
               </div>
-              <div class="col-9">
+              <div class="col-4">
                 <h4 class="u-color-black">Details</h4>
-                details of the transactions will show here
+              </div>
+              <div class="col-4">
+                <h4 class="u-color-black">Balances</h4>
+                <Balances :balances="this.dashboard.balances" :latestBlock="this.dashboard.meta.blocks" :transactions="this.dashboard.transactions"></Balances>
               </div>
             </div>
           </div>
@@ -28,12 +31,13 @@
 <script>
 import Header from '../components/Header.vue';
 import Sidebar from '../components/Sidebar.vue';
+import Balances from './Balances/Balances.vue';
 import Transactions from '../components/Transactions/Transactions.vue';
 import PeercoinPI from '@/services/PeercoinPI.js';
 
 export default {
   name: "Dashboard",
-  components: { Sidebar, Header, Transactions },
+  components: { Sidebar, Header, Balances, Transactions },
   data() {
     return {
       dashboard: {

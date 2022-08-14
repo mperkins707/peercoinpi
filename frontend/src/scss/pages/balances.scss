@@ -1,0 +1,23 @@
+.c-balances {
+
+    &__item {
+        width: 100%;
+        padding-left: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-left: 5px solid $border-color;
+        font-size: 16px;
+        font-family: $primary-font;
+        font-weight: 500;
+
+        &__label {
+            color: gray;
+        }
+
+        &__value {
+            color: $primary-color;
+        }
+    }
+}
