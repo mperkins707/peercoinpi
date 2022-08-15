@@ -54,7 +54,7 @@ Everything is runs on the device. Only UI is served to the user with a web serve
 
 You will note there a difference between docker-compose files. In fact one should be used for development and as it names implies to production for the other one. This ensure that development environment can replicate the production (peercoind on the device itself) correctly.
 
-#### Version 1.0.0
+#### Version 1.0.0 (not released)
 
 - Switch between testnet and mainnet for users to be able to test Peercoin PI with test coins beforehand.
 - Web UI connected to the Peercoind RPC command-line.
