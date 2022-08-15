@@ -42,6 +42,18 @@ class DataTransform {
         };
     }
 
+    getFormattedStatus(status, value = 0) {
+        if ( status === 0 ) {
+            return 'Ready to mint in ' + value + ' days';
+        }
+
+        if ( status === 1 ) {
+            return 'Minting'
+        } 
+
+        return 'Ready to mint';
+    }
+
     kFormatter(num) {
         return Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000).toFixed(1)) + 'k' : Math.sign(num)*Math.abs(num)
     }

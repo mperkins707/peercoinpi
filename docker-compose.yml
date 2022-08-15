@@ -24,7 +24,7 @@ services:
     volumes:
     - ./api:/peercoinpi
     - ./api/config/peercoin.conf:/root/.peercoin/peercoin.conf
-    - ./blockchain/main:/root/.peercoin
+    - ./blockchain/main/peercoin.conf:/root/.peercoin/peercoin.conf
     networks:
     - peercoinpi
     command: bash -c "cd /peercoinpi && ./start_main.sh"

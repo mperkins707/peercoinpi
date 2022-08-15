@@ -13,7 +13,12 @@ By running a node with Peercoin PI you're contributing to the good health of the
 
 Currently the network is allowing anyone with at least 1 PPC to contribute.
 By leaving your full node always connected to the network you can be rewarded up to 5% off your stakes.
-Alternating on and off of the device will get you up to 3%. **Simple as that.**
+Alternating on and off of the device will get you up to 3%. 
+
+The more amount you've own the more minting power you get. 
+Age of your funds also take into account when calculating minting power. 
+It's means that a 100 PPC mint will after some more time equals to a 1,000 mint in term of minting power.
+**Simple as that.**
 
 ##### Why should I run a full node ?
 

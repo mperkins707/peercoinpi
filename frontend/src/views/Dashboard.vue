@@ -19,7 +19,12 @@
               </div>
               <div class="col-4">
                 <h4 class="u-color-black">Balances</h4>
-                <Balances :balances="this.dashboard.balances" :latestBlock="this.dashboard.meta.blocks" :transactions="this.dashboard.transactions"></Balances>
+                <Balances 
+                  :balances="this.dashboard.balances" 
+                  :latestBlock="this.dashboard.meta.blocks" 
+                  :transactions="this.dashboard.transactions"
+                  :status="this.dashboard.status"
+                ></Balances>
               </div>
             </div>
           </div>

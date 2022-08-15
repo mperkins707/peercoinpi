@@ -1,0 +1,36 @@
+{
+  "chain": "main",
+  "blocks": 637519,
+  "headers": 637519,
+  "bestblockhash": "b6230ee4f92fa5f15645483176b4b587d0becca857aff5214e8bbee23fe16d36",
+  "difficulty": 15.5073571618058,
+  "mediantime": 1660525942,
+  "verificationprogress": 0.9999990934975979,
+  "initialblockdownload": false,
+  "chainwork": "000000000000000000000000000000000000000000000000004e7028724ad574",
+  "size_on_disk": 844622902,
+  "softforks": [
+    {
+      "id": "bip34",
+      "version": 2,
+      "reject": {
+        "status": true
+      }
+    },
+    {
+      "id": "bip66",
+      "version": 3,
+      "reject": {
+        "status": true
+      }
+    },
+    {
+      "id": "bip65",
+      "version": 4,
+      "reject": {
+        "status": true
+      }
+    }
+  ],
+  "warnings": ""
+}

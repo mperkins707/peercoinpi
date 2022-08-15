@@ -23,6 +23,10 @@
             justify-content: center;
         }
 
+        &--active {
+            border-left: 3px solid $primary-color-rgba;
+        }
+
         ul {
             display: flex;
             flex-direction: column;
@@ -36,11 +40,16 @@
                 }
 
                 height: 70px;
-                transition: all 250ms ease-in-out;
+                transition: all 150ms ease-in-out;
 
-                &:hover {
+         
+                &:hover:first-child {
                     cursor: pointer;
-                    transition: all 750ms ease-in-out;
+                }
+
+                &:hover:not(:first-child) {
+                    cursor: pointer;
+                    transition: all 150ms ease-in-out;
                     background-color: $primary-color-rgba;
                     a {
                         color: $secondary-color;

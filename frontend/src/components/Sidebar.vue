@@ -13,7 +13,7 @@
             </div>
             <span class="fatter">Menu</span>
           </li>
-          <li>
+          <li class="c-sidebar__items--active">
             <div class="c-sidebar__items--icon">
               <img height=32px src="../assets/ui/ui-overview.svg" alt="Overview">
             </div>
