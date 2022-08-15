@@ -12,10 +12,18 @@
           <div class="container">
             <div class="row">
               <div class="col-4">
-                <Transactions :transactions="this.dashboard.transactions"></Transactions>
+                <Transactions 
+                @selected="selected"
+                :transactions="this.dashboard.transactions"
+                ></Transactions>
               </div>
-              <div class="col-4">
+              <div class="col-4" v-if="this.showDetails">
                 <h4 class="u-color-black">Details</h4>
+                <div class="row">
+                  <BalancesItem label="Address" :value="this.currentSelected.address"></BalancesItem>
+                  <BalancesItem label="Confirmations" :value="this.currentSelected.confirmations"></BalancesItem>
+                  <BalancesItem label="Transaction ID" :value="this.currentSelected.txid"></BalancesItem>
+                </div>
               </div>
               <div class="col-4">
                 <h4 class="u-color-black">Balances</h4>
@@ -37,12 +45,27 @@
 import Header from '../components/Header.vue';
 import Sidebar from '../components/Sidebar.vue';
 import Balances from './Balances/Balances.vue';
+import BalancesItem from './Balances/BalancesItem.vue';
 import Transactions from '../components/Transactions/Transactions.vue';
 import PeercoinPI from '@/services/PeercoinPI.js';
 
 export default {
   name: "Dashboard",
-  components: { Sidebar, Header, Balances, Transactions },
+  components: { Sidebar, Header, Balances, BalancesItem, Transactions },
+  props: {
+    showDetails: {
+      type: Boolean,
+      default: null,
+      required: true
+    }
+  },
+  methods: {
+    selected(id) {
+      console.log('GrandPa: anyone talking here ?');
+      this.currentSelected = this.dashboard.transactions[ id ];
+      this.showDetails = true;
+    }
+  },
   data() {
     return {
       dashboard: {
@@ -60,6 +83,10 @@ export default {
       },
       testmode: {
         type: Boolean
+      },
+      currentSelected: {
+        type: Object,
+        default: {}
       }
     }
   },

@@ -68,6 +68,11 @@ export default {
       let api = new PeercoinPI();
       var self = this;
       api.getDashboard().then(response => self.dashboard = response.data);
+
+      setInterval(function () {
+        console.log('polling');
+        api.getDashboard().then(response => self.dashboard = response.data);
+      }.bind(this), 1000); 
   }
 }
 

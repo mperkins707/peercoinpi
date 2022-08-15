@@ -31,9 +31,25 @@
         }
 
         &__icon {
+
+            &-left {
+                display: flex;
+                align-items: center;
+                justify-content: left;
+            }
+
+            &-right {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+            }
+ 
+        }
+
+        &__date {
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
         }
 
         &__amount {

@@ -12,6 +12,7 @@
         <div class="c-mints__item__age">
             {{ this.mint['age-in-day'] }}
         </div>
+        {{ this.mint.attempts }}
     </div>
 </template>
 

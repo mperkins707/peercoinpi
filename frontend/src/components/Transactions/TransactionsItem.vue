@@ -1,17 +1,19 @@
 <template>
     <div class="c-transactions__item"
+    :id="this.id"
+    v-on:click="this.onClick"
     :class="{ 'c-transactions__item--disabled': this.confirmations < 8 }"
     >
-        <div class="c-transactions__item__date">
-            {{ this.timereceived }}
-        </div>
         <div class="c-transactions__item__icon">
-            <div class="c-sidebar__items--icon rotateLeft" v-if="this.category === 'receive'">
+            <div class="c-transactions__item__icon c-transactions__item__icon-left rotateLeft" v-if="this.category === 'receive'">
               <img height=32px src="../../assets/ui/ui-received.svg" alt="Received">
             </div>
-            <div class="c-sidebar__items--icon rotateRight" v-if="this.category === 'send'">
+            <div class="c-transactions__item__icon c-transactions__item__icon-right rotateRight" v-if="this.category === 'send'">
               <img height=32px src="../../assets/ui/ui-received.svg" alt="Send">
             </div>
+        </div>
+        <div class="c-transactions__item__date">
+            {{ this.timereceived }}
         </div>
         <div class="c-transactions__item__amount c-transactions__item__amount--received" v-if="this.category === 'receive'">
             +{{ this.amount }}
@@ -24,12 +26,13 @@
 
 <script>
 export default {
-  watch: {
-  },
-  methods: {
-  },
     name: "TransactionsItem",
     props: {
+        id: {
+            type: Number,
+            default: null,
+            required: true
+        },
         confirmations: {
             type: Number,
             default: null,
@@ -54,6 +57,12 @@ export default {
             type: String,
             default: null,
             required: true 
+        }
+    },
+    methods: {
+        onClick: function() {
+            console.log('Child: Hey dad!');
+            this.$emit('selected', this.id);
         }
     }
 }
