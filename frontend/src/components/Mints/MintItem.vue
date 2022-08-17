@@ -7,7 +7,7 @@
             {{ this.mint.amount }}
         </div>
         <div class="c-mints__item__percentage">
-            {{ this.mint.percentage }}%
+            <br>{{ this.mint.percentage }}%
         </div>
         <div class="c-mints__item__age">
             {{ this.mint['age-in-day'] }}

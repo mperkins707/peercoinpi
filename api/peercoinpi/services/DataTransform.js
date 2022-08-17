@@ -1,15 +1,19 @@
 
 class DataTransform {
 
+    helper;
+
     constructor() {
         console.log('DataTransform initialization..');
+        var PeercoinHelper = require("../services/PeercoinHelper");
+        this.helper = new PeercoinHelper();
     }
 
     /**
      * Transform listminting RPC request
      * @param {Array} mints 
      */
-    getMints(mints) {
+    getMints(mints, difficulty) {
 
         let mature, immature, hashrate = 0;
 
@@ -17,16 +21,9 @@ class DataTransform {
             let newMint = value;
             newMint['amount'] = newMint['amount'] / 1000000;
             hashrate = newMint['attempts'] + hashrate;
-
-            let age = parseInt(newMint['age-in-day']);
             
-            // auto calculate minting luckiness
-            if ( age <= 1 ) {
-                newMint['percentage'] = Math.ceil(newMint['minting-probability-24h'] * 100);
-            } else if ( age > 1 && age <= 30 ) {
-                newMint['percentage'] = Math.ceil(newMint['minting-probability-30d'] * 100);
-            } else if ( age >= 90 ) {
-                newMint['percentage'] = Math.ceil(newMint['minting-probability-90d'] * 100);
+            if ( newMint['status'] === 'mature' ) {
+                newMint['percentage'] = this.helper.getProbability(newMint['amount'], newMint['age-in-day'], difficulty);
             }
 
             mints[index] = newMint;

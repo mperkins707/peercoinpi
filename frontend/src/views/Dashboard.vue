@@ -17,15 +17,7 @@
                 :transactions="this.dashboard.transactions"
                 ></Transactions>
               </div>
-              <div class="col-4" v-if="this.showDetails">
-                <h4 class="u-color-black">Details</h4>
-                <div class="row">
-                  <BalancesItem label="Address" :value="this.currentSelected.address"></BalancesItem>
-                  <BalancesItem label="Confirmations" :value="this.currentSelected.confirmations"></BalancesItem>
-                  <BalancesItem label="Transaction ID" :value="this.currentSelected.txid"></BalancesItem>
-                </div>
-              </div>
-              <div class="col-4">
+              <div class="col-3">
                 <h4 class="u-color-black">Balances</h4>
                 <Balances 
                   :balances="this.dashboard.balances" 
@@ -33,6 +25,14 @@
                   :transactions="this.dashboard.transactions"
                   :status="this.dashboard.status"
                 ></Balances>
+              </div>
+              <div class="col-5" v-if="this.showDetails">
+                <h4 class="u-color-black">Details</h4>
+                <div class="row">
+                  <BalancesItem label="Address" :value="this.currentSelected.address"></BalancesItem>
+                  <BalancesItem label="Confirmations" :value="this.currentSelected.confirmations"></BalancesItem>
+                  <BalancesItem label="Transaction ID" :value="this.currentSelected.txid"></BalancesItem>
+                </div>
               </div>
             </div>
           </div>

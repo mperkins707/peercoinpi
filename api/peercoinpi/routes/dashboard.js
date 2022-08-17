@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
     let helper = new PeercoinHelper();
     let progress = Math.ceil(meta.verificationprogress * 100);
     let status = 0;
-    let mints = transformer.getMints(api.getListMinting());
+    let mints = transformer.getMints(api.getListMinting(), meta.difficulty);
 
     if ( mints.mature.length >= 1 ) {
       status = 1;

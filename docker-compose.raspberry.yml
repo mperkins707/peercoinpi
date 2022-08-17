@@ -1,0 +1,14 @@
+version: '3.6'
+services:
+  peercoinpi-raspberrypi-deamon:
+    build: 
+      context: .
+      dockerfile: docker/Dockerfile
+    networks:
+    - peercoinpi
+    ports:
+      - 9904:9904
+
+networks:
+  peercoinpi:
+    driver: bridge
