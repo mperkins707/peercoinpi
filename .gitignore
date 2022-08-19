@@ -5,3 +5,5 @@ frontend/node_modules
 api/peercoinpi/node_modules
 blockchain/main
 blockchain/testnet
+api/peercoinpi/deamon/main
+api/peercoinpi/deamon/testnet

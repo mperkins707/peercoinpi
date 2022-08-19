@@ -1,5 +1,15 @@
+##############################
+# Development Desktop Version
+##############################
+
 version: '3.6'
 services:
+
+  #
+  # PeercoinPI frontend
+  #
+  # VueJS/SASS/Babel tooling
+  #
   peercoinpi-web:
     image: nginx:latest
     volumes:
@@ -8,17 +18,25 @@ services:
       - 8080:80
     networks:
     - peercoinpi
+
+  #
+  # Peercoin Testnet Deamon
+  #
   peercoinpi-deamon-testnet:
     image: peercoin/peercoind:0.11.7
     volumes:
     - ./api:/peercoinpi
-    - ./api/config/testnet/peercoin.conf:/root/.peercoin/peercoin.conf
-    - ./blockchain/testnet:/root/.peercoin/testnet3
+    - ./api/config/testnet/peercoin.conf:/root/.peercoin/peercoin.conf # Map to configuration file
+    - ./blockchain/testnet:/root/.peercoin/testnet3 # Contains blocks and wallet data
     networks:
     - peercoinpi
     command: bash -c "cd /peercoinpi && ./start_testnet.sh"
     ports:
       - 9904:9904
+
+  #
+  # Peercoin Mainet Deamon
+  #
   peercoinpi-deamon-mainnet:
     image: peercoin/peercoind:0.11.7
     volumes:
@@ -26,9 +44,16 @@ services:
     - ./blockchain/main/peercoin.conf:/root/.peercoin/peercoin.conf
     networks:
     - peercoinpi
-    command: bash -c "cd /peercoinpi && ./start_main.sh"
+    command: bash -c "cd /peercoinpi && ./start_main.sh" # Start up deamon and refreshing 
     ports:
       - 9902:9902
+    
+  #
+  # PeercoinPI API server
+  #
+  # Start an NodeJS/Express server that
+  # the PeercoinPI frontend consumes
+  #
   peercoin-api:
     image: node:18.7.0
     networks:
@@ -37,8 +62,9 @@ services:
     - ./api/peercoinpi:/api
     ports:
       - "3000:3000"
-    command: bash -c "cd /api && npm install && npm run start"
+    command: bash -c "cd /api && npm install && npm run start" # Start PeercoinPI API
 
+# Share the same network
 networks:
   peercoinpi:
     driver: bridge
