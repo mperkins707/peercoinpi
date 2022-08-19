@@ -8,11 +8,11 @@ services:
       - 8080:80
     networks:
     - peercoinpi
-  peercoinpi-deamon:
+  peercoinpi-deamon-testnet:
     image: peercoin/peercoind:0.11.7
     volumes:
     - ./api:/peercoinpi
-    - ./api/config/peercoin.conf:/root/.peercoin/peercoin.conf
+    - ./api/config/testnet/peercoin.conf:/root/.peercoin/peercoin.conf
     - ./blockchain/testnet:/root/.peercoin/testnet3
     networks:
     - peercoinpi
@@ -23,7 +23,6 @@ services:
     image: peercoin/peercoind:0.11.7
     volumes:
     - ./api:/peercoinpi
-    - ./api/config/peercoin.conf:/root/.peercoin/peercoin.conf
     - ./blockchain/main/peercoin.conf:/root/.peercoin/peercoin.conf
     networks:
     - peercoinpi
