@@ -11,9 +11,15 @@
             <div class="c-transactions__item__icon c-transactions__item__icon-right rotateRight" v-if="this.category === 'send'">
               <img height=32px src="../../assets/ui/ui-received.svg" alt="Send">
             </div>
+            <div class="c-transactions__item__icon c-transactions__item__icon-left rotateLeft" v-if="this.category === 'stake'">
+              <img height=32px src="../../assets/ui/ui-received.svg" alt="Stake">
+            </div>
         </div>
         <div class="c-transactions__item__date">
             {{ this.timereceived }}
+        </div>
+        <div class="c-transactions__item__amount c-transactions__item__amount--received" v-if="this.category === 'stake'">
+            +{{ this.amount }}
         </div>
         <div class="c-transactions__item__amount c-transactions__item__amount--received" v-if="this.category === 'receive'">
             +{{ this.amount }}

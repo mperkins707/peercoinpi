@@ -11,13 +11,7 @@
         <div class="c-dashboard-view-transactions">
           <div class="container">
             <div class="row">
-              <div class="col-4">
-                <Transactions 
-                @selected="selected"
-                :transactions="this.dashboard.transactions"
-                ></Transactions>
-              </div>
-              <div class="col-3">
+              <div class="col-2">
                 <h4 class="u-color-black">Balances</h4>
                 <Balances 
                   :balances="this.dashboard.balances" 
@@ -26,12 +20,19 @@
                   :status="this.dashboard.status"
                 ></Balances>
               </div>
+              <div class="col-5">
+                <Transactions 
+                @selected="selected"
+                :transactions="this.dashboard.transactions"
+                ></Transactions>
+              </div>
               <div class="col-5" v-if="this.showDetails">
                 <h4 class="u-color-black">Details</h4>
                 <div class="row">
                   <BalancesItem label="Address" :value="this.currentSelected.address"></BalancesItem>
                   <BalancesItem label="Confirmations" :value="this.currentSelected.confirmations"></BalancesItem>
                   <BalancesItem label="Transaction ID" :value="this.currentSelected.txid"></BalancesItem>
+                  <BalancesItem label="Category" :value="this.currentSelected.category"></BalancesItem>
                 </div>
               </div>
             </div>
