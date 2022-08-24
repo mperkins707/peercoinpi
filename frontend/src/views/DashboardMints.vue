@@ -20,7 +20,8 @@
                 <Mints :mints="this.dashboard.mints.mature"></Mints>
               </div>
               <div class="col-md-12 col-lg-12 col-xl-3">
-                <h4 class="u-color-black">Minted (0)</h4>
+                <h4 class="u-color-black">Minted ({{ this.dashboard.mints.minted.length }})</h4>
+                <MintedList :mints="this.dashboard.mints.minted"></MintedList>
               </div>
               <div class="col-md-12 col-lg-12 col-xl-3">
                 <h4 class="u-color-black">Hashrate</h4>
@@ -40,10 +41,11 @@ import Header from '../components/Header.vue';
 import Sidebar from '../components/Sidebar.vue';
 import PeercoinPI from '@/services/PeercoinPI.js';
 import Mints from '../components/Mints/Mints.vue';
+import MintedList from '../components/Mints/MintedList.vue';
 
 export default {
   name: "Dashboard",
-  components: { Sidebar, Header, Mints },
+  components: { Sidebar, Header, Mints, MintedList },
   data() {
     return {
       dashboard: {

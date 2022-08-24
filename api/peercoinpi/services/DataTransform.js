@@ -13,9 +13,9 @@ class DataTransform {
      * Transform listminting RPC request
      * @param {Array} mints 
      */
-    getMints(mints, difficulty) {
+    getMints(mints, difficulty, transactions) {
 
-        let mature, immature, hashrate = 0;
+        let mature, immature, minted, hashrate = 0;
 
         mints.forEach((value, index) => {
             let newMint = value;
@@ -29,12 +29,14 @@ class DataTransform {
             mints[index] = newMint;
         });
         
-        mature = mints.filter(mint => mint.status == 'mature');
-        immature = mints.filter(mint => mint.status == 'immature');
+        mature      = mints.filter(mint => mint.status == 'mature');
+        immature    = mints.filter(mint => mint.status == 'immature');
+        minted      = transactions.filter(tx => tx.category == 'stake' );
 
         return {
             'mature': mature,
             'immature': immature,
+            'minted': minted,
             'hashrate': this.kFormatter(hashrate)
         };
     }

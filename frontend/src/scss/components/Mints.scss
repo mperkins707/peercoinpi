@@ -17,3 +17,18 @@
         margin-top: 30px;
     }
 }
+
+.c-minted-list {
+    margin-top: 30px;
+
+    @import '../components/generics/Card.scss';
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $primary-color;
+        font-size: 24px;
+        font-weight: 300;
+    }
+}

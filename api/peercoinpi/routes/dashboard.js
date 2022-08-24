@@ -13,11 +13,14 @@ router.get('/', function(req, res, next) {
     let helper = new PeercoinHelper();
     let progress = Math.ceil(meta.verificationprogress * 100);
     let status = 0;
-    let mints = transformer.getMints(api.getListMinting(), meta.difficulty);
+
+    let transactions = api.getTransactions().reverse();
+    let mints = transformer.getMints(api.getListMinting(), meta.difficulty, transactions);
 
     if ( mints.mature.length >= 1 ) {
       status = 1;
     }
+
 
     return res.json({
       'balances': api.getBalances(),
