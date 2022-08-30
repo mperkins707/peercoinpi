@@ -2,7 +2,7 @@
   <div class="c-dashboard">
     <Sidebar></Sidebar>
     <div class="c-dashboard-view">
-        <Header></Header>
+        <Header :mode="this.dashboard.meta.chain"></Header>
         <div class="c-dashboard-view-header">
           <div class="container">
             <h1>Overview</h1>
