@@ -43,7 +43,12 @@ _Remember that a decentralized system should always be out of centralized group 
 
 ## Web Dashboard UI
 
+Testnet mode
 ![PeercoinPI - Dashboard View](docs/images/DashboardView.png)
+
+Mainet mode
+
+![PeercoinPI - Dashboard View Mainet](docs/images/DashboardView-Mainet.png)
 
 ----
 
