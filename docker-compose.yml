@@ -42,6 +42,7 @@ services:
     volumes:
     - ./api:/peercoinpi
     - ./blockchain/main/peercoin.conf:/root/.peercoin/peercoin.conf
+    - ./blockchain/main:/root/.peercoin # Contains blocks and wallet data
     networks:
     - peercoinpi
     command: bash -c "cd /peercoinpi && ./start_main.sh" # Start up deamon and refreshing 
