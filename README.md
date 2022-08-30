@@ -41,6 +41,12 @@ _Remember that a decentralized system should always be out of centralized group 
 
 ----
 
+## Web Dashboard UI
+
+![PeercoinPI - Dashboard View](docs/images/DashboardView.png)
+
+----
+
 ##### Advanced Technical Details
 
 Peercoin PI can be run on Raspberry PI device. 
