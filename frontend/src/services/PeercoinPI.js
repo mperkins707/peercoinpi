@@ -43,6 +43,16 @@ class PeercoinPI {
         return this.get('dashboard');
     }
 
+    /**
+     * Set the settings mode for the chain
+     * 
+     * @param {String} mode 
+     * @returns Promise
+     */
+    setSettingsMode(mode) {
+        return axios.post(this.buildHost() + '/settings/chain/' + mode);
+    }
+
 }
 
 export default PeercoinPI;

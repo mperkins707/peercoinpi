@@ -6,6 +6,7 @@ var cors = require('cors')
 
 var dashboardRouter = require('./routes/dashboard');
 var transactionsRouter = require('./routes/transactions');
+var settingsRouter = require('./routes/settings');
 
 var app = express();
 
@@ -19,5 +20,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/dashboard', dashboardRouter);
 app.use('/transactions', transactionsRouter);
+app.use('/settings', settingsRouter);
 
 module.exports = app;

@@ -1,5 +1,5 @@
 const fs = require('fs');
-
+var path = require('path');
 
 class PeercoinAPI {
 
@@ -7,14 +7,12 @@ class PeercoinAPI {
 
     constructor() {
         console.log('Peercoin RPC initialization..');
-    }
 
-    /**
-     * Create usable API host
-     * @returns String
-     */
-    buildHost() {
-        return "http://localhost:9904";
+        let settings = fs.readFileSync(path.resolve('config/peercoinpi.json'));
+        settings = JSON.parse(settings);
+
+        // update chain settings
+        this.chain = settings.mode;
     }
 
     getBlockchaininfo() {

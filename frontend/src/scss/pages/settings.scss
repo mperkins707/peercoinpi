@@ -1,0 +1,46 @@
+.c-settings {
+    display: flex;
+    flex-direction: row;
+
+    &-view {
+        width: 100%;
+        background-color: $background-color;
+
+        &-header {
+            display: flex;
+            align-items: center;
+            background-color: $secondary-color;
+            height: 100px;
+        }
+
+        &-options {
+            margin-top: 20px;
+            font-family: $primary-font;
+
+            .container { 
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+
+            h3 {
+                font-family: $primary-font;
+                color: $third-color;
+                margin-bottom: 20px;
+            }
+            h6 {
+                font-family: $primary-font;
+                color: $third-color;
+                font-weight: 600;
+            }
+
+            &__warning {
+                font-family: $primary-font;
+                font-size: 14px;
+                padding-left: 12px;
+                padding-top: 20px;
+                margin-top: 50px;
+                margin-bottom: 5px;
+            }
+        }
+    }
+}

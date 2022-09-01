@@ -51,7 +51,9 @@
             <div class="c-sidebar__items--icon">
               <img height=32px src="../assets/ui/ui-settings.svg" alt="Settings">
             </div>
-            <span>Settings</span>
+            <span>
+              <a href="/dashboard/settings">Settings</a>
+            </span>
           </li>
         </ul>
       </div>

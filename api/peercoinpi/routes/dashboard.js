@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
+const fs = require('fs');
 var PeercoinAPI = require('../services/PeercoinAPI');
 var DataTransform = require('../services/DataTransform');
 var PeercoinHelper = require("../services/PeercoinHelper");
@@ -23,6 +24,7 @@ router.get('/', function(req, res, next) {
 
 
     return res.json({
+      'testnetMode': meta.chain == 'main' ? false : true,
       'balances': api.getBalances(),
       'meta': api.getBlockchaininfo(),
       'progress': progress,

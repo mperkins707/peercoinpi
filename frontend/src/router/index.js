@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Dashboard from '../views/Dashboard.vue'
 import DashboardMints from '../views/DashboardMints.vue'
+import Settings from '../views/Settings.vue';
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/dashboard/mints',
     name: 'Dashboard - Mints',
     component: DashboardMints
+  },
+  {
+    path: '/dashboard/settings',
+    name: 'Settings',
+    component: Settings
   }
 ]
 
