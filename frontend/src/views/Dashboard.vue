@@ -29,7 +29,7 @@
               <div class="col-md-12 col-lg-5" v-if="this.showDetails">
                 <h4 class="u-color-black">Details</h4>
                 <div class="row">
-                  <BalancesItem label="Address" :value="this.currentSelected.address"></BalancesItem>
+                  <BalancesItem label="Address" :link="updateBlockExplorer(this.currentSelected.address)"></BalancesItem>
                   <BalancesItem label="Confirmations" :value="this.currentSelected.confirmations"></BalancesItem>
                   <BalancesItem label="Transaction ID" :value="this.currentSelected.txid"></BalancesItem>
                   <BalancesItem label="Category" :value="this.currentSelected.category"></BalancesItem>
@@ -65,6 +65,12 @@ export default {
       console.log('GrandPa: anyone talking here ?');
       this.currentSelected = this.dashboard.transactions[ id ];
       this.showDetails = true;
+    },
+    updateBlockExplorer(address) {
+      return {
+        label: address,
+        href: 'https://tblockbook.peercoin.net/address/tpc1qcanvas0000000000000000000000000000000000000qq8cqqvzs2cfx9w'
+      };
     }
   },
   data() {

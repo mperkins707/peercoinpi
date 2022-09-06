@@ -1,0 +1,22 @@
+{
+    "trezor": {
+        "testnet": {
+            "address": "",
+            "tx": ""
+        },
+        "main": {
+            "address": "",
+            "tx": ""
+        }
+    },
+    "cryptoid": {
+        "testnet": {
+            "address": "",
+            "tx": ""
+        },
+        "main": {
+            "address": "",
+            "tx": ""
+        }
+    }
+}

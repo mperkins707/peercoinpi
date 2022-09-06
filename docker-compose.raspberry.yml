@@ -4,14 +4,53 @@
 
 version: '3.6'
 services:
+
+  #
+  # PeercoinPI frontend
+  #
+  # VueJS/SASS/Babel tooling
+  #
+  peercoinpi-web:
+    image: nginx:latest
+    volumes:
+    - ./frontend/dist:/usr/share/nginx/html
+    ports:
+      - 8080:80
+    networks:
+    - peercoinpi
+
+  #
+  # Peercoin Mainet Deamon
+  # Raspberry PI ARM
+  #
   peercoinpi-raspberrypi-deamon:
     build: 
       context: .
       dockerfile: docker/Dockerfile
+      volumes:
+      - ./api:/peercoinpi
+      - ./blockchain/main/peercoin.conf:/root/.peercoin/peercoin.conf
+      - ./blockchain/main:/root/.peercoin # Contains blocks and wallet data
     networks:
     - peercoinpi
     ports:
       - 9904:9904
+
+  #
+  # PeercoinPI API server
+  #
+  # Start an NodeJS/Express server that
+  # the PeercoinPI frontend consumes
+  #
+  peercoin-api:
+    image: node:18.7.0
+    networks:
+      - peercoinpi
+    volumes:
+    - ./api/peercoinpi:/api
+    ports:
+      - "3000:3000"
+    command: bash -c "cd /api && npm install && npm run start" # Start PeercoinPI API
 
 networks:
   peercoinpi:
