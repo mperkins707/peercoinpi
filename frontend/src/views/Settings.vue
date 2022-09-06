@@ -5,12 +5,11 @@
         <div class="c-settings-view-header">
           <div class="container">
             <h1>Settings</h1>
-            {{ this.testnetMode }}
           </div>
         </div>
         <div class="c-settings-view-options">
           <div class="container">
-            <div class="row">
+            <div class="row c-settings-view-options-row">
               <div class="col-4">
                 <div class="row">
                   <h3>Chain mode</h3>
@@ -21,7 +20,9 @@
                 <toggle-button v-model="testnetMode"
                     :width="100"
                     :height="30"
+                    :sync=true
                     :labels="{checked: 'TESTNET', unchecked: 'MAINET'}"
+                    @change="onTestnetModeChange"
                   />
                   <div class="row c-settings-view-options__warning" v-if="!this.testnetMode">
                     <div class="alert alert-danger" role="alert">
@@ -38,9 +39,25 @@
                   <h6>Default: TREZOR</h6>
                 </div>
                 <div class="row">
-                  <select class="form-select" v-model="explorer">
+                  <select class="form-select" v-model="explorer" @change="onExplorerChange">
                     <option value="https://tblockbook.peercoin.net/">Trezor</option>
                     <option value="https://chainz.cryptoid.info/ppc/">Chainz</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row c-settings-view-options-row">
+              <div class="col-4">
+                <div class="row">
+                  <h3>Theme</h3>
+                </div>
+                <div class="row">
+                  <h6>Default: Dark</h6>
+                </div>
+                <div class="row">
+                  <select class="form-select" v-model="theme" @change="onThemeChange">
+                    <option value="dark">Dark</option>
+                    <option value="light">Light</option>
                   </select>
                 </div>
               </div>
@@ -54,6 +71,7 @@
 <script>
 import Sidebar from '../components/Sidebar.vue';
 import PeercoinPI from '@/services/PeercoinPI.js';
+import store from '../store/index';
 
 export default {
   name: 'Settings',
@@ -65,15 +83,26 @@ export default {
         type: Array,
         default: null
       },
-      explorer: 'https://tblockbook.peercoin.net/',
-      testnetMode: Boolean
+      testnetMode: null
     }
   },
-  watch: {
-    testnetMode(oldValue, newValue) {
+  methods: {
+    onThemeChange(event) {
+      if ( event.target.value === '' ) {
+        return;
+      }
+      store.commit('SET_THEME', event.target.value);
+    },
+    onExplorerChange(event) {
+      if ( event.target.value === '' ) {
+        return;
+      }
+      store.commit('SET_EXPLORER', event.target.value);
+    },
+    onTestnetModeChange(toggle) {
       let api = new PeercoinPI();
-      console.log(newValue);
-      newValue === true ? api.setSettingsMode('main') : api.setSettingsMode('testnet');
+      toggle.value === true ? api.setSettingsMode('testnet') : api.setSettingsMode('main');
+      toggle.value === true ? store.commit('SET_CHAIN', 'testnet') : store.commit('SET_CHAIN', 'main');
     }
   },
   beforeMount() {
@@ -81,8 +110,15 @@ export default {
       var self = this;
       api.getDashboard().then(response => {
         self.dashboard = response.data;
+        self.testnetMode = response.data.meta.chain == 'test' ? true : false;
       });
-      this.testnetMode = !this.dashboard.testnetMode;
-  }, 
+
+      // load state settings
+      let data = JSON.parse(localStorage.getItem('store'));
+      if ( data !== null ) {
+        this.explorer = data.settings.explorer;
+        this.theme    = data.settings.theme;
+      }
+  }
 }
 </script>

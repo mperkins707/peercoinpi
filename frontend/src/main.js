@@ -12,6 +12,16 @@ Vue.config.productionTip = false
 
 Vue.use(ToggleButton);
 
+/**
+ * Pre-populate Vuex store from
+ * localStorage
+ */
+let savedStore = localStorage.getItem('store');
+if ( savedStore !== null ) {
+  let data = JSON.parse(savedStore);
+  store.replaceState(data);
+}
+
 new Vue({
   router,
   store,
