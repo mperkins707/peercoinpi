@@ -48,6 +48,7 @@ services:
       - peercoinpi
     volumes:
     - ./api/peercoinpi:/api
+    - ./frontend:/frontend
     ports:
       - "3000:3000"
     command: bash -c "cd /api && npm install && npm run start" # Start PeercoinPI API
