@@ -27,12 +27,12 @@ services:
     build: 
       context: .
       dockerfile: docker/Dockerfile
-      volumes:
-      - ./api:/peercoinpi
-      - ./blockchain/main/peercoin.conf:/root/.peercoin/peercoin.conf
-      - ./blockchain/main:/root/.peercoin # Contains blocks and wallet data
     networks:
     - peercoinpi
+    volumes:
+    - ./api:/peercoinpi
+    - ./blockchain/main/peercoin.conf:/root/.peercoin/peercoin.conf
+    - ./blockchain/main:/root/.peercoin # Contains blocks and wallet data
     ports:
       - 9904:9904
 
