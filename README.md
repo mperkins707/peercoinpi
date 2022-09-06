@@ -50,6 +50,11 @@ Mainet mode
 
 ![PeercoinPI - Dashboard View Mainet](docs/images/DashboardView-Mainet.png)
 
+Settings
+
+![PeercoinPI - Dashboard View Settings](docs/images/Dashboard-Settings.png)
+
+
 ----
 
 ##### Advanced Technical Details
