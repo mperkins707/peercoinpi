@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.b4cac0f1eaaafd43a75fb45176f936a5.js"
+  "/precache-manifest.22c800daed2fdaa01930a734fbd55239.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "peercoinpi"});
