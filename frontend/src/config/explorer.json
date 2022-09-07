@@ -1,22 +1,22 @@
 {
     "trezor": {
         "testnet": {
-            "address": "https://tblockbook.peercoin.net/",
-            "tx": "https://tblockbook.peercoin.net/"
+            "address": "https://tblockbook.peercoin.net/address/",
+            "tx": "https://tblockbook.peercoin.net/tx/"
         },
         "main": {
-            "address": "https://tblockbook.peercoin.net/",
-            "tx": "https://tblockbook.peercoin.net/"
+            "address": "https://explorer.peercoin.net/address/",
+            "tx": "https://explorer.peercoin.net/tx/"
         }
     },
     "cryptoid": {
         "testnet": {
-            "address": "https://chainz.cryptoid.info/ppc/",
-            "tx": "https://chainz.cryptoid.info/ppc/"
+            "address": "https://chainz.cryptoid.info/ppc-test/address.dws?",
+            "tx": "https://chainz.cryptoid.info/ppc-test/tx.dws?"
         },
         "main": {
-            "address": "https://chainz.cryptoid.info/ppc/",
-            "tx": "https://chainz.cryptoid.info/ppc/"
+            "address": "https://chainz.cryptoid.info/ppc/address.dws?",
+            "tx": "https://chainz.cryptoid.info/ppc/tx.dws?"
         }
     }
 }

@@ -29,9 +29,9 @@
               <div class="col-md-12 col-lg-5" v-if="this.showDetails">
                 <h4 class="u-color-black">Details</h4>
                 <div class="row">
-                  <BalancesItem label="Address" :link="updateBlockExplorer(this.currentSelected.address)"></BalancesItem>
+                  <BalancesItem label="Address" :link="updateBlockExplorerAddress(this.currentSelected.address)"></BalancesItem>
                   <BalancesItem label="Confirmations" :value="this.currentSelected.confirmations"></BalancesItem>
-                  <BalancesItem label="Transaction ID" :value="this.currentSelected.txid"></BalancesItem>
+                  <BalancesItem label="Transaction ID" :link="updateBlockExplorerTx(this.currentSelected.txid)"></BalancesItem>
                   <BalancesItem label="Category" :value="this.currentSelected.category"></BalancesItem>
                 </div>
               </div>
@@ -66,10 +66,20 @@ export default {
       this.currentSelected = this.dashboard.transactions[ id ];
       this.showDetails = true;
     },
-    updateBlockExplorer(address) {
+    updateBlockExplorerAddress(address) {
+      let settings = this.$store.state.settings.explorer[this.$store.state.settings.chain]['address'];
+      
       return {
         label: address,
-        href: 'https://tblockbook.peercoin.net/address/tpc1qcanvas0000000000000000000000000000000000000qq8cqqvzs2cfx9w'
+        href: settings + address
+      };
+    },
+    updateBlockExplorerTx(tx) {
+      let settings = this.$store.state.settings.explorer[this.$store.state.settings.chain]['tx'];
+      
+      return {
+        label: tx,
+        href: settings + tx
       };
     }
   },
