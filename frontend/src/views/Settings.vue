@@ -40,8 +40,8 @@
                 </div>
                 <div class="row">
                   <select class="form-select" v-model="explorer" @change="onExplorerChange">
-                    <option value="https://tblockbook.peercoin.net/">Trezor</option>
-                    <option value="https://chainz.cryptoid.info/ppc/">Chainz</option>
+                    <option value="trezor">Trezor</option>
+                    <option value="cryptoid">Cryptoid</option>
                   </select>
                 </div>
               </div>
@@ -72,6 +72,7 @@
 import Sidebar from '../components/Sidebar.vue';
 import PeercoinPI from '@/services/PeercoinPI.js';
 import store from '../store/index';
+import explorer from '../config/explorer.json';
 
 export default {
   name: 'Settings',
@@ -91,13 +92,15 @@ export default {
       if ( event.target.value === '' ) {
         return;
       }
+
       store.commit('SET_THEME', event.target.value);
     },
     onExplorerChange(event) {
       if ( event.target.value === '' ) {
         return;
       }
-      store.commit('SET_EXPLORER', event.target.value);
+
+      store.commit('SET_EXPLORER', explorer[event.target.value]);
     },
     onTestnetModeChange(toggle) {
       let api = new PeercoinPI();
