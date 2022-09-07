@@ -1,10 +1,13 @@
 <template>
   <div class="c-settings">
-    <Sidebar></Sidebar>
+    <Sidebar :display="this.showSidebar"></Sidebar>
     <div class="c-settings-view">
         <div class="c-settings-view-header">
           <div class="container">
-            <h1>Settings</h1>
+            <div class="c-settings-view-header">
+              <img src="../assets/ui/ui-menu.svg" @click="onMenuClick" v-if="!this.showSidebar">
+              <h1>Settings</h1>
+            </div>
           </div>
         </div>
         <div class="c-settings-view-options">
@@ -85,10 +88,15 @@ export default {
         type: Array,
         default: null
       },
-      testnetMode: null
+      testnetMode: null,
+      showSidebar: null
+
     }
   },
   methods: {
+    onMenuClick() {
+      this.showSidebar = !this.showSidebar;
+    },
     onThemeChange(event) {
       if ( event.target.value === '' ) {
         return;

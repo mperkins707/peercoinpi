@@ -11,6 +11,11 @@
             align-items: center;
             background-color: $secondary-color;
             height: 100px;
+            gap: 15px;
+
+            img {
+                height: 50px;
+            }
         }
 
         &-options {

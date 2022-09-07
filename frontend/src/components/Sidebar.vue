@@ -1,5 +1,5 @@
 <template>
-    <div class="c-sidebar">
+    <div class="c-sidebar" v-if="display">
       <div class="c-sidebar__logo">
         <a href="https://www.peercoin.net/university/" target="_blank">
           <img src="../assets/ui/ui-logo.png" alt="Peercoin">
@@ -65,6 +65,12 @@
 
 <script>
 export default {
-    name: "Sidebar"
+    name: "Sidebar",
+    props: {
+      display: {
+        type: Boolean,
+        default: true
+      }
+    }
 }
 </script>
