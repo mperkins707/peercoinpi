@@ -19,5 +19,31 @@
         &__value {
             color: $primary-color;
         }
+
+        &__link {
+            display: flex;
+            gap: 5px;
+
+            img {
+                height: 14px;
+            }
+
+            a {
+                text-decoration: none;
+                color: $primary-color;
+
+                &:hover {
+                    color: $primary-color;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    color: red;
+                    width: 12px;
+                    height: 12px;
+                }
+            }
+        }
     }
 }

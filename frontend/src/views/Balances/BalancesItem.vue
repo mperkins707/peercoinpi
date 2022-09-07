@@ -2,8 +2,9 @@
     <div class="c-balances__item">
         <div class="c-balances__item__label">{{ this.label }}</div>
         <div class="c-balances__item__value" v-if="this.link == null">{{ this.value }}</div>
-        <div class="c-balances__item__value" v-if="this.link != null">
+        <div class="c-balances__item__link" v-if="this.link != null">
             <a target="_blank" :href="this.link.href">{{ this.link.label }}</a>
+            <img src="../../assets/ui/ui-external.svg" alt="External Link">
         </div>
     </div>
 </template>
