@@ -10,7 +10,7 @@
         <div class="c-settings-view-options">
           <div class="container">
             <div class="row c-settings-view-options-row">
-              <div class="col-4">
+              <div class="col-sm-10 col-md-4">
                 <div class="row">
                   <h3>Chain mode</h3>
                 </div>
@@ -31,7 +31,9 @@
                     </div>
                   </div>
               </div>
-              <div class="col-4">
+            </div>
+            <div class="row c-settings-view-options-row">
+              <div class="col-sm-10 col-md-4">
                 <div class="row">
                   <h3>Block explorer</h3>
                 </div>
@@ -47,7 +49,7 @@
               </div>
             </div>
             <div class="row c-settings-view-options-row">
-              <div class="col-4">
+              <div class="col-sm-10 col-md-4">
                 <div class="row">
                   <h3>Theme</h3>
                 </div>
