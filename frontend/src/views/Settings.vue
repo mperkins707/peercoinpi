@@ -72,7 +72,6 @@
 import Sidebar from '../components/Sidebar.vue';
 import PeercoinPI from '@/services/PeercoinPI.js';
 import store from '../store/index';
-import explorer from '../config/explorer.json';
 
 export default {
   name: 'Settings',
@@ -100,7 +99,7 @@ export default {
         return;
       }
 
-      store.commit('SET_EXPLORER', explorer[event.target.value]);
+      store.commit('SET_EXPLORER', event.target.value);
     },
     onTestnetModeChange(toggle) {
       let api = new PeercoinPI();

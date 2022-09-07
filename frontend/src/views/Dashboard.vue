@@ -49,6 +49,7 @@ import Balances from './Balances/Balances.vue';
 import BalancesItem from './Balances/BalancesItem.vue';
 import Transactions from '../components/Transactions/Transactions.vue';
 import PeercoinPI from '@/services/PeercoinPI.js';
+import explorer from '../config/explorer.json';
 
 export default {
   name: "Dashboard",
@@ -67,16 +68,16 @@ export default {
       this.showDetails = true;
     },
     updateBlockExplorerAddress(address) {
-      let settings = this.$store.state.settings.explorer[this.$store.state.settings.chain]['address'];
-      
+      let settings = explorer[this.$store.state.settings.explorer][this.$store.state.settings.chain]['address'];
+
       return {
         label: address,
         href: settings + address
       };
     },
     updateBlockExplorerTx(tx) {
-      let settings = this.$store.state.settings.explorer[this.$store.state.settings.chain]['tx'];
-      
+      let settings = explorer[this.$store.state.settings.explorer][this.$store.state.settings.chain]['tx'];
+
       return {
         label: tx,
         href: settings + tx
