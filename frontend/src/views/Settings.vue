@@ -5,7 +5,7 @@
         <div class="c-settings-view-header">
           <div class="container">
             <div class="c-settings-view-header">
-              <img src="../assets/ui/ui-menu.svg" @click="onMenuClick" v-if="!this.showSidebar">
+              <img src="../assets/ui/ui-menu.svg" @click="onMenuClick" v-if="!this.$store.state.settings.sidebarOpen">
               <h1>Settings</h1>
             </div>
           </div>
@@ -96,6 +96,7 @@ export default {
   methods: {
     onMenuClick() {
       this.showSidebar = !this.showSidebar;
+      store.commit('SET_SIDEBAR_OPEN', this.showSidebar);
     },
     onThemeChange(event) {
       if ( event.target.value === '' ) {

@@ -5,7 +5,7 @@
         <div class="c-community-view-header">
             <div class="container">
               <div class="c-community-view-header">
-                <img src="../assets/ui/ui-menu.svg" @click="onMenuClick" v-if="!this.showSidebar">
+                <img src="../assets/ui/ui-menu.svg" @click="onMenuClick" v-if="!this.$store.state.settings.sidebarOpen">
                 <h1>Community</h1>
               </div>
             </div>
@@ -16,7 +16,8 @@
   
   <script>
   import Sidebar from '../components/Sidebar.vue';
-  
+  import store from '../store/index';
+    
   export default {
     name: 'Community',
     components: { Sidebar },
@@ -28,6 +29,7 @@
     methods: {
         onMenuClick() {
             this.showSidebar = !this.showSidebar;
+            store.commit('SET_SIDEBAR_OPEN', this.showSidebar);
         }
     }
   }

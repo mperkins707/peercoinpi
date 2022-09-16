@@ -9,7 +9,8 @@ export default new Vuex.Store({
     settings: {
       chain: 'testnet',
       explorer: 'https://tblockbook.peercoin.net/',
-      theme: 'dark'
+      theme: 'dark',
+      sidebarOpen: false
     }
   },
   getters: {
@@ -28,6 +29,10 @@ export default new Vuex.Store({
     },
     SET_EXPLORER(state, payload) {
       state.settings.explorer = payload;
+      localStorage.setItem('store', JSON.stringify(state));
+    },
+    SET_SIDEBAR_OPEN(state, payload) {
+      state.settings.sidebarOpen = payload;
       localStorage.setItem('store', JSON.stringify(state));
     }
   },

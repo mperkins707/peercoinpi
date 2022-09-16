@@ -5,6 +5,7 @@
         <Header :mode="this.dashboard.meta.chain"></Header>
         <div class="c-dashboard-view-header">
           <div class="container">
+            <img src="../assets/ui/ui-menu.svg" @click="onMenuClick" v-if="!this.$store.state.settings.sidebarOpen">
             <h1>My Mints</h1>
           </div>
         </div>
@@ -42,6 +43,8 @@ import Sidebar from '../components/Sidebar.vue';
 import PeercoinPI from '@/services/PeercoinPI.js';
 import Mints from '../components/Mints/Mints.vue';
 import MintedList from '../components/Mints/MintedList.vue';
+import store from '../store/index';
+
 
 export default {
   name: "Dashboard",
@@ -63,9 +66,14 @@ export default {
       },
       testmode: {
         type: Boolean
-      },
-      showSidebar: false
+      }
     }
+  },
+  methods: {
+    onMenuClick() {
+      this.showSidebar = !this.showSidebar;
+        store.commit('SET_SIDEBAR_OPEN', this.showSidebar);
+    },
   },
   mounted() {
       let api = new PeercoinPI();
