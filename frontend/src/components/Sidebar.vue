@@ -2,7 +2,8 @@
     <div class="c-sidebar" v-if="display">
       <div class="c-sidebar__logo">
         <a href="https://www.peercoin.net/university/" target="_blank">
-          <img src="../assets/ui/ui-logo.png" alt="Peercoin">
+          <img v-if="this.$store.state.settings.theme === 'dark'" src="../assets/ui/ui-logo.png" alt="Peercoin">
+          <img v-else src="../assets/ui/ui-logo-light.png" alt="Peercoin">
         </a>
       </div>
       <div class="c-sidebar__items">
@@ -46,6 +47,14 @@
               <img height=32px src="../assets/ui/ui-community.svg" alt="Send">
             </div>
             <span>Community</span>
+          </li>
+          <li>
+            <div class="c-sidebar__items--icon">
+              <img height=32px src="../assets/ui/ui-backup.svg" alt="Backups">
+            </div>
+            <span>
+              <a href="/dashboard/backups">Backups</a>
+            </span>
           </li>
          <li>
             <div class="c-sidebar__items--icon">

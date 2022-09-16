@@ -20,6 +20,7 @@ let savedStore = localStorage.getItem('store');
 if ( savedStore !== null ) {
   let data = JSON.parse(savedStore);
   store.replaceState(data);
+  document.documentElement.setAttribute('data-theme', store.state.settings.theme);
 }
 
 new Vue({

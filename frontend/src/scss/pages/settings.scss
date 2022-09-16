@@ -29,12 +29,12 @@
 
             h3 {
                 font-family: $primary-font;
-                color: $third-color;
+                color: var(--text-color);
                 margin-bottom: 20px;
             }
             h6 {
                 font-family: $primary-font;
-                color: $third-color;
+                color: var(--text-color);
                 font-weight: 600;
             }
 

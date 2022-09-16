@@ -103,6 +103,7 @@ export default {
       }
 
       store.commit('SET_THEME', event.target.value);
+      document.documentElement.setAttribute('data-theme', event.target.value);
     },
     onExplorerChange(event) {
       if ( event.target.value === '' ) {

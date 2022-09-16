@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Dashboard from '../views/Dashboard.vue'
 import DashboardMints from '../views/DashboardMints.vue'
 import Settings from '../views/Settings.vue';
+import Backups from '../views/Backups.vue';
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ const routes = [
     path: '/dashboard/settings',
     name: 'Settings',
     component: Settings
+  },
+  {
+    path: '/dashboard/backups',
+    name: 'Backups',
+    component: Backups
   }
 ]
 

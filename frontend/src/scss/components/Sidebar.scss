@@ -1,6 +1,6 @@
 .c-sidebar {
     width: 20%;
-    background-color: $third-color;
+    background-color: var(--third-color);
     color: $secondary-color;
 
     &__logo {
@@ -24,7 +24,7 @@
         }
 
         &--active {
-            border-left: 3px solid $primary-color-rgba;
+            border-left: 3px solid var(--primary-color-rgba);
         }
 
         ul {
@@ -50,7 +50,7 @@
                 &:hover:not(:first-child) {
                     cursor: pointer;
                     transition: all 150ms ease-in-out;
-                    background-color: $primary-color-rgba;
+                    background-color: var(--primary-color-rgba);
                     a {
                         color: $secondary-color;
                     }
