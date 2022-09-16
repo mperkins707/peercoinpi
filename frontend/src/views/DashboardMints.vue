@@ -1,6 +1,6 @@
 <template>
   <div class="c-dashboard">
-    <Sidebar></Sidebar>
+    <Sidebar :display="this.showSidebar"></Sidebar>
     <div class="c-dashboard-view">
         <Header :mode="this.dashboard.meta.chain"></Header>
         <div class="c-dashboard-view-header">
@@ -63,7 +63,8 @@ export default {
       },
       testmode: {
         type: Boolean
-      }
+      },
+      showSidebar: false
     }
   },
   mounted() {
