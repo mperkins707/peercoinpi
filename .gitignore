@@ -7,3 +7,5 @@ blockchain/main
 blockchain/testnet
 api/peercoinpi/deamon/main
 api/peercoinpi/deamon/testnet
+node_modules
+api/peercoinpi/deamon/
