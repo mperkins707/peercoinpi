@@ -1,0 +1,21 @@
+.c-community {
+    display: flex;
+    flex-direction: row;
+
+    &-view {
+        width: 100%;
+        background-color: $background-color;
+
+        &-header {
+            display: flex;
+            align-items: center;
+            background-color: $secondary-color;
+            height: 100px;
+            gap: 15px;
+
+            img {
+                height: 50px;
+            }
+        }
+    }
+}

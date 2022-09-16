@@ -5,6 +5,7 @@ import Dashboard from '../views/Dashboard.vue'
 import DashboardMints from '../views/DashboardMints.vue'
 import Settings from '../views/Settings.vue';
 import Backups from '../views/Backups.vue';
+import Community from '../views/Community.vue';
 
 Vue.use(VueRouter)
 
@@ -33,6 +34,11 @@ const routes = [
     path: '/dashboard/backups',
     name: 'Backups',
     component: Backups
+  },
+  {
+    path: '/dashboard/community',
+    name: 'Community',
+    component: Community
   }
 ]
 

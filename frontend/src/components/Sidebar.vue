@@ -46,7 +46,9 @@
             <div class="c-sidebar__items--icon">
               <img height=32px src="../assets/ui/ui-community.svg" alt="Send">
             </div>
-            <span>Community</span>
+            <span>
+              <a href="/dashboard/community">Community</a>
+            </span>
           </li>
           <li>
             <div class="c-sidebar__items--icon">
