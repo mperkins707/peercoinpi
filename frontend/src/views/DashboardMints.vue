@@ -44,9 +44,9 @@
               </div>
               <div class="col-md-12 col-lg-12 col-xl-3">
                 <div class="c-mints__hashrate">
-                  <h5 class="u-color-black">Hashrate</h5>
-                  <span class="c-mints__hashrate-value">{{ this.dashboard.mints.hashrate }} </span>
-                  <span class="c-mints__hashrate-desc">Gh/s</span>
+                  <h5 class="u-color-black">Attempts</h5>
+                  <span class="c-mints__hashrate-value">{{ this.dashboard.mints.mature.length  }} </span>
+                  <span class="c-mints__hashrate-desc">hashes/s</span>
                 </div>
               </div>
             </div>

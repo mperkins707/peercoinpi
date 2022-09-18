@@ -9,6 +9,7 @@
                     <div class="row">
                         <div class="col-12 c-mints__item--amount">
                             {{ this.mint.amount }}
+                            {{ this.mint.attempts }}
                         </div>
                     </div>
                 </div>
