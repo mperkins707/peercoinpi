@@ -27,6 +27,7 @@ router.get('/', function(req, res, next) {
       'testnetMode': meta.chain == 'main' ? false : true,
       'balances': api.getBalances(),
       'meta': api.getBlockchaininfo(),
+      'difficulties': api.getDifficulty(),
       'progress': progress,
       "finished": progress === 100 ? true : false,
       'mb': Math.ceil(meta.size_on_disk / 1024 / 1024),

@@ -13,21 +13,40 @@
           <div class="container">
             <div class="row">
               <div class="col-md-12 col-lg-12 col-xl-3">
-                <h4 class="u-color-black">Immature ({{ this.dashboard.mints.immature.length }})</h4>
-                <Mints :mints="this.dashboard.mints.immature"></Mints>
+                <div class="c-mints__immature">
+                  <h4 class="u-color-black">Immature ({{ this.dashboard.mints.immature.length }})</h4>
+                  <span class="c-mints__immature-value">
+                    <Mints :mints="this.dashboard.mints.immature"></Mints>
+                  </span>
+                  <div class="c-mints__immature--empty-container" v-if="this.dashboard.mints.immature.length === 0">
+                    <img class="c-mints__immature--empty" src="../assets/ui/ui-empty.svg">
+                  </div>  
+                </div>
               </div>
               <div class="col-md-12 col-lg-12 col-xl-3">
-                <h4 class="u-color-black">Mature ({{ this.dashboard.mints.mature.length }})</h4>
-                <Mints :mints="this.dashboard.mints.mature"></Mints>
+                <div class="c-mints__minted">
+                  <h4 class="u-color-black">Mature ({{ this.dashboard.mints.mature.length }})</h4>
+                  <span class="c-mints__minted-value">
+                    <Mints :mints="this.dashboard.mints.mature"></Mints>
+                  </span>
+                </div>
               </div>
               <div class="col-md-12 col-lg-12 col-xl-3">
-                <h4 class="u-color-black">Minted ({{ this.dashboard.mints.minted.length }})</h4>
-                <MintedList :mints="this.dashboard.mints.minted"></MintedList>
+                <div class="c-mints__mature">
+                  <h5 class="u-color-black">Minted ({{ this.dashboard.mints.minted.length }})</h5>
+                  <span class="c-mints__mature-value">
+                    <MintedList :mints="this.dashboard.mints.minted"></MintedList>
+                    <div class="c-mints__mature--empty-container" v-if="this.dashboard.mints.minted.length === 0">
+                      <img class="c-mints__mature--empty" src="../assets/ui/ui-empty.svg">
+                    </div>  
+                  </span>
+                </div>
               </div>
               <div class="col-md-12 col-lg-12 col-xl-3">
-                <h4 class="u-color-black">Hashrate</h4>
                 <div class="c-mints__hashrate">
-                  <h3 class="u-color-black">{{ this.dashboard.mints.hashrate }} attempts</h3>
+                  <h5 class="u-color-black">Hashrate</h5>
+                  <span class="c-mints__hashrate-value">{{ this.dashboard.mints.hashrate }} </span>
+                  <span class="c-mints__hashrate-desc">Gh/s</span>
                 </div>
               </div>
             </div>

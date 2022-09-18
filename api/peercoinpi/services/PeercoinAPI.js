@@ -35,6 +35,11 @@ class PeercoinAPI {
         return JSON.parse(rawdata);
     }
 
+    getDifficulty() {
+        let rawdata = fs.readFileSync('./deamon/' + this.chain + '/getdifficulty.json');
+        return JSON.parse(rawdata); 
+    }
+
 }
 
 module.exports = PeercoinAPI;

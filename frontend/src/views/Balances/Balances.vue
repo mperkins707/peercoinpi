@@ -6,6 +6,7 @@
         <BalancesItem label="Transactions" :value="this.transactions.length"></BalancesItem>
         <BalancesItem label="Status" :value="this.status"></BalancesItem>
         <BalancesItem label="Latest block" :value="this.latestBlock"></BalancesItem>
+        <BalancesItem label="Difficulty" :value="this.difficulty"></BalancesItem>
     </div>        
 </template>
 
@@ -25,6 +26,9 @@ export default {
             type: Object
         },
         status: {
+            type: String
+        },
+        difficulty: {
             type: String
         }
     },

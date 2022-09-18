@@ -1,5 +1,6 @@
 .c-mints {
     margin-top: 30px;
+    margin-bottom: 30px;
 
     @import '../components/generics/Card.scss';
 
@@ -10,6 +11,20 @@
 
         &--mature {
             border-left: 3px solid $primary-color;
+        }
+
+        &--amount {
+            color: $primary-color;
+            margin-bottom: 5px;
+        }
+
+        &--weight {
+            margin-bottom: 5px;
+        }
+
+        &--days {
+            display: flex;
+            font-size: 12px;
         }
 
         &-row:nth-child(2)
@@ -59,7 +74,7 @@
             &-mature {
                 position: relative;
 
-                opacity: 0.5;
+                opacity: 1;
                 transform: translateY(-25px);
 
                 &-ringing {
@@ -88,8 +103,35 @@
         }
     }
 
-    &__hashrate {
-        margin-top: 30px;
+    &__hashrate,
+    &__minted,
+    &__mature,
+    &__immature {
+        border-radius: 10px 10px 10px 10px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+        padding: 25px;
+        margin-bottom: 35px;
+        background-color: white;
+
+        &-value {
+            font-size: 34px;
+        }
+
+        &-desc {
+            color: var(--label-color);
+        }
+
+        &--empty-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &--empty {
+            height: 60px;
+            opacity: 0.3;
+        }
+
     }
 }
 

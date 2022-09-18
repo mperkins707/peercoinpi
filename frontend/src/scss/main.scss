@@ -24,6 +24,9 @@
 @import '../scss/components/Sidebar.scss';
 @import '../scss/components/Mints.scss';
 
+// Mixin
+@import '../scss/utility/mixin';
+
 html, 
 body {
     padding: 0;

@@ -1,0 +1,14 @@
+@use "sass:math";
+
+/**
+* Generated Weight Pulsation classes
+*/
+$maximum:   100;
+$factor:    30;
+
+@for $i from 1 through $maximum {
+    .c-mints__item__pulsate-mature-weight-#{$i} 
+    { 
+        opacity: math.div($i, $factor);
+    }
+}

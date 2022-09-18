@@ -18,6 +18,7 @@
                   :latestBlock="this.dashboard.meta.blocks" 
                   :transactions="this.dashboard.transactions"
                   :status="this.dashboard.status"
+                  :difficulty="this.dashboard.difficulties['proof-of-stake']"
                 ></Balances>
               </div>
               <div class="col-md-12 col-lg-5">

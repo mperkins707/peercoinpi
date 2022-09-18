@@ -24,6 +24,7 @@ class DataTransform {
             
             if ( newMint['status'] === 'mature' ) {
                 newMint['percentage'] = this.helper.getProbability(newMint['amount'], newMint['age-in-day'], difficulty);
+                newMint['weight-class'] = 'weight-' + Math.round(newMint['minting-probability-90d'] * 100);
             }
 
             mints[index] = newMint;
