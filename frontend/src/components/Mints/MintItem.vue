@@ -11,11 +11,6 @@
                             {{ this.mint.amount }}
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12 c-mints__item--weight">
-                            {{ this.mint['age-in-day'] }}
-                        </div>
-                    </div>
                 </div>
                 <div class="col-4 c-mints__item-row">
                 </div>
