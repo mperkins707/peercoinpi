@@ -9,7 +9,7 @@
                     <div class="row">
                         <div class="col-12 c-mints__item--amount">
                             {{ this.mint.amount }}
-                            {{ this.mint.attempts }}
+                            {{ this.mint['minting-probability-24h'] * 100 }}
                         </div>
                     </div>
                 </div>
